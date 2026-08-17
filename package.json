@@ -1,0 +1,24 @@
+{
+  "name": "ai-code-review-buddy",
+  "version": "1.0.0",
+  "description": "AI Code Review Buddy - Interactive static analyzer, complexity estimator, AI code reviewer and tutor",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "keywords": [
+    "code-review",
+    "static-analysis",
+    "complexity-analyzer",
+    "gemini-ai",
+    "programming-tutor"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
