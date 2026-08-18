@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Code Review Buddy — Next-Gen Static Analyzer & Complexity Engine</title>
+  <meta name="description" content="Catch bugs in milliseconds, simulate asymptotic complexity curves, and master algorithms with an interactive CS tutor. Built for developers, students, and engineers.">
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Landing CSS -->
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+  <!-- Interactive Neural Background Canvas -->
+  <canvas id="landingNeuralCanvas"></canvas>
+  <div class="grid-bg-overlay"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="landing-header">
+    <div class="container nav-content">
+      <a href="landing.html" class="nav-brand">
+        <div class="brand-icon-box">🧠</div>
+        <div class="brand-title">AI Code Review Buddy <span class="brand-tag">v2.4 Pro</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#complexity" class="nav-link">Big-O Visualizer</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#languages" class="nav-link">Languages</a></li>
+        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary">⚡ Quick Demo</a>
+        <a href="index.html" class="btn btn-primary">🚀 Launch Studio</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-pill">
+        <span>✨ Next-Gen Pair Programmer & Static Analyzer</span>
+      </div>
+
+      <h1 class="hero-headline">
+        Catch Bugs in Milliseconds. <br>
+        <span class="text-gradient">Optimize Code to Perfection.</span>
+      </h1>
+
+      <p class="hero-subtext">
+        An instant AST static analyzer, interactive Big-O asymptotic curve engine, and visual CS tutor that detects memory leaks, buffer overflows, and algorithmic bottlenecks with 1-click in-place repairs.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="index.html" class="btn btn-primary btn-lg">
+          <span>🚀 Launch Interactive Studio</span>
+        </a>
+        <a href="#complexity" class="btn btn-secondary btn-lg">
+          <span>⚡ Try Complexity Sandbox</span>
+        </a>
+      </div>
+
+      <div class="hero-stats-strip">
+        <div class="hero-stat-item">⚡ <strong>&lt; 15ms</strong> Analysis Time</div>
+        <div class="hero-stat-item">🔒 <strong>100%</strong> Offline Capable</div>
+        <div class="hero-stat-item">🌐 <strong>5+</strong> Languages Supported</div>
+        <div class="hero-stat-item">🛠️ <strong>1-Click</strong> Direct Code Fixes</div>
+      </div>
+
+      <!-- Hero Interactive Mockup Showcase -->
+      <div class="hero-mockup-wrapper">
+        <div class="mockup-glow"></div>
+        <div class="hero-mockup-card">
+          <div class="mockup-titlebar">
+            <div class="window-dots">
+              <span class="w-dot red"></span>
+              <span class="w-dot yellow"></span>
+              <span class="w-dot green"></span>
+            </div>
+            <div class="mockup-tab-pill">two_sum.c — C (GCC 13)</div>
+            <div class="mockup-tab-pill" style="color: var(--cyan-400);">⚡ Executed in 0.012s</div>
+          </div>
+
+          <div class="mockup-body">
+            <!-- Left Editor Col -->
+            <div class="mockup-editor-col">
+              <div class="mockup-line"><span class="m-num">1</span><span class="m-code"><span class="m-kw">#include</span> <span class="m-str">&lt;stdio.h&gt;</span></span></div>
+              <div class="mockup-line"><span class="m-num">2</span><span class="m-code"><span class="m-kw">#include</span> <span class="m-str">&lt;stdlib.h&gt;</span></span></div>
+              <div class="mockup-line"><span class="m-num">3</span><span class="m-code"></span></div>
+              <div class="mockup-line"><span class="m-num">4</span><span class="m-code"><span class="m-type">int</span>* <span class="m-fn">twoSum</span>(<span class="m-type">int</span>* <span class="m-var">nums</span>, <span class="m-type">int</span> <span class="m-var">numsSize</span>, <span class="m-type">int</span> <span class="m-var">target</span>) {</span></div>
+              <div class="mockup-line"><span class="m-num">5</span><span class="m-code">&nbsp;&nbsp;<span class="m-type">int</span>* <span class="m-var">res</span> = (<span class="m-type">int</span>*)<span class="m-fn">malloc</span>(2 * <span class="m-kw">sizeof</span>(<span class="m-type">int</span>));</span></div>
+              <div class="mockup-line"><span class="m-num">6</span><span class="m-code">&nbsp;&nbsp;<span class="m-kw">for</span> (<span class="m-type">int</span> <span class="m-var">i</span> = 0; <span class="m-var">i</span> &lt; <span class="m-var">numsSize</span>; <span class="m-var">i</span>++) {</span></div>
+              <div class="mockup-line m-warn-line"><span class="m-num">7</span><span class="m-code">&nbsp;&nbsp;&nbsp;&nbsp;<span class="m-kw">for</span> (<span class="m-type">int</span> <span class="m-var">j</span> = <span class="m-var">i</span> + 1; <span class="m-var">j</span> &lt;= <span class="m-var">numsSize</span>; <span class="m-var">j</span>++) { <span style="color:#f43f5e">// ⚠️ O(n²) + Out of Bounds</span></span></div>
+              <div class="mockup-line"><span class="m-num">8</span><span class="m-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m-kw">if</span> (<span class="m-var">nums</span>[<span class="m-var">i</span>] + <span class="m-var">nums</span>[<span class="m-var">j</span>] == <span class="m-var">target</span>) {</span></div>
+              <div class="mockup-line"><span class="m-num">9</span><span class="m-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m-var">res</span>[0] = <span class="m-var">i</span>; <span class="m-var">res</span>[1] = <span class="m-var">j</span>;</span></div>
+              <div class="mockup-line"><span class="m-num">10</span><span class="m-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m-kw">return</span> <span class="m-var">res</span>;</span></div>
+              <div class="mockup-line"><span class="m-num">11</span><span class="m-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+              <div class="mockup-line"><span class="m-num">12</span><span class="m-code">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+              <div class="mockup-line"><span class="m-num">13</span><span class="m-code">&nbsp;&nbsp;}</span></div>
+              <div class="mockup-line"><span class="m-num">14</span><span class="m-code">&nbsp;&nbsp;<span class="m-kw">return</span> NULL;</span></div>
+              <div class="mockup-line"><span class="m-num">15</span><span class="m-code">}</span></div>
+            </div>
+
+            <!-- Right Review Dashboard Col -->
+            <div class="mockup-review-col">
+              <div class="mockup-score-banner">
+                <div class="score-badge-box">
+                  <div class="score-circle-mini">92</div>
+                  <div class="score-text-group">
+                    <h5>Code Health Score</h5>
+                    <span>⚡ Instant Static Engine • 12ms</span>
+                  </div>
+                </div>
+                <a href="index.html" class="btn btn-primary" style="padding: 6px 12px; font-size: 0.78rem;">Open Studio ➔</a>
+              </div>
+
+              <!-- Issue 1 -->
+              <div class="mockup-issue-item">
+                <div class="issue-tag-row">
+                  <span class="issue-tag-critical">CRITICAL BUG</span>
+                  <a href="index.html" class="btn-fix-mini">✨ Apply Fix Directly</a>
+                </div>
+                <div style="font-weight: 700; color: #f8fafc; margin-bottom: 2px;">Array Index Out of Bounds on Line 7</div>
+                <div style="color: #94a3b8; font-size: 0.75rem;">Loop condition <code>j &lt;= numsSize</code> accesses invalid memory index. Fixed to <code>j &lt; numsSize</code>.</div>
+              </div>
+
+              <!-- Complexity Summary -->
+              <div class="mockup-issue-item" style="background: rgba(56, 189, 248, 0.08); border-color: rgba(56, 189, 248, 0.25);">
+                <div class="issue-tag-row">
+                  <span style="font-size: 0.65rem; font-weight: 700; background: #0284c7; color: #fff; padding: 2px 6px; border-radius: 4px;">COMPLEXITY ESTIMATE</span>
+                  <span style="color: #38bdf8; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;">O(n²) ➔ O(n)</span>
+                </div>
+                <div style="font-weight: 700; color: #f8fafc; margin-bottom: 2px;">Quadratic Nested Loop Detected</div>
+                <div style="color: #94a3b8; font-size: 0.75rem;">Can be optimized to linear time $O(n)$ using a Hash Map lookup table.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Feature Grid -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Enterprise Developer Tooling</span>
+        <h2 class="section-title">Everything You Need for Clean, High-Performance Code</h2>
+        <p class="section-desc">Engineered from the ground up for high-precision algorithmic auditing and seamless pair-programming.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">⚡</div>
+          <h3 class="feature-title">Instant AST Static Engine</h3>
+          <p class="feature-text">
+            Executes full structural analysis in under 15ms. Detects memory leaks (`malloc` without `free`), dangling pointers, off-by-one errors, and missing header imports.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">📈</div>
+          <h3 class="feature-title">Asymptotic Scaling Curves</h3>
+          <p class="feature-text">
+            Visualizes asymptotic bounds comparing user code ($O(n^2)$) vs optimal implementations ($O(n)$) with dynamic input simulation ($N = 10 \dots 10,000$) and real-time probe tracking dots.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">🛠️</div>
+          <h3 class="feature-title">1-Click In-Place Repair</h3>
+          <p class="feature-text">
+            No more manual copy-pasting. Click "Apply Fix Directly" or "Fix All Issues" to patch your code instantly with glowing line animations in the editor.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">🎓</div>
+          <h3 class="feature-title">Interactive CS Tutor</h3>
+          <p class="feature-text">
+            Provides intuitive mental models, visual Stack vs Heap memory layout diagrams, execution call stacks, and deep explanations of underlying computer science principles.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">🧪</div>
+          <h3 class="feature-title">Automated Edge-Case Suite</h3>
+          <p class="feature-text">
+            Automatically generates boundary condition test cases, empty inputs, duplicate keys, and large-scale stress tests with expected outputs.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">🎨</div>
+          <h3 class="feature-title">Multi-Theme Developer Grid</h3>
+          <p class="feature-text">
+            Choose from 5 developer aesthetics: AI Developer Grid, Matrix Cyber Rain, Cyberpunk Synthwave, Tokyo Sapphire, and Minimal Obsidian.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Complexity Sandbox Section -->
+  <section id="complexity" class="section" style="background: rgba(10, 16, 32, 0.4); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Interactive Big-O Simulator</span>
+        <h2 class="section-title">Experience Asymptotic Growth in Real-Time</h2>
+        <p class="section-desc">Drag the input size slider below and watch the dynamic tracking probe dots glide along the complexity curves.</p>
+      </div>
+
+      <div class="complexity-teaser-box">
+        <div class="complexity-teaser-grid">
+          <div class="teaser-controls">
+            <div class="teaser-slider-row">
+              <div class="teaser-slider-header">
+                <span>Simulate Input Size (N):</span>
+                <strong id="teaserNVal">100</strong>
+              </div>
+              <input type="range" id="teaserSlider" class="teaser-slider" min="10" max="10000" step="10" value="100">
+            </div>
+
+            <div class="speedup-badge-large" id="teaserSpeedup">
+              🚀 100x Faster
+            </div>
+
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+              As $N$ scales from $10$ to $10,000$, your current quadratic code ($O(n^2)$) explodes from $100$ to $100,000,000$ operations, while the optimized linear algorithm ($O(n)$) executes in just $10,000$ operations!
+            </p>
+
+            <a href="index.html" class="btn btn-primary" style="align-self: flex-start;">🚀 Test Your Own Code in Studio</a>
+          </div>
+
+          <!-- SVG Visualizer Curve -->
+          <div style="background: #050811; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
+            <svg id="teaserCurveSvg" viewBox="0 0 460 200" style="width: 100%; height: auto; overflow: visible;">
+              <defs>
+                <linearGradient id="tUserGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#f43f5e" stop-opacity="0.0"/>
+                </linearGradient>
+                <linearGradient id="tOptGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#10b981" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Grid -->
+              <line x1="45" y1="20" x2="430" y2="20" stroke="rgba(255,255,255,0.06)"/>
+              <line x1="45" y1="85" x2="430" y2="85" stroke="rgba(255,255,255,0.06)"/>
+              <line x1="45" y1="150" x2="430" y2="150" stroke="rgba(255,255,255,0.06)"/>
+              <line x1="45" y1="170" x2="430" y2="170" stroke="rgba(255,255,255,0.2)"/>
+              <line x1="45" y1="20" x2="45" y2="170" stroke="rgba(255,255,255,0.2)"/>
+
+              <!-- Axis Labels -->
+              <text x="40" y="25" fill="#64748b" font-size="10" text-anchor="end" font-family="monospace">10⁸ ops</text>
+              <text x="40" y="85" fill="#64748b" font-size="10" text-anchor="end" font-family="monospace">10⁴ ops</text>
+              <text x="40" y="165" fill="#64748b" font-size="10" text-anchor="end" font-family="monospace">0</text>
+
+              <!-- User Curve (Red Quadratic) -->
+              <path d="M 45 170 Q 230 165 430 20 L 430 170 L 45 170 Z" fill="url(#tUserGrad)"/>
+              <path d="M 45 170 Q 230 165 430 20" fill="none" stroke="#f43f5e" stroke-width="2.5"/>
+
+              <!-- Opt Curve (Green Linear) -->
+              <path d="M 45 170 L 430 117.5 L 430 170 L 45 170 Z" fill="url(#tOptGrad)"/>
+              <path d="M 45 170 L 430 117.5" fill="none" stroke="#10b981" stroke-width="2.5"/>
+
+              <!-- Dynamic Crosshair -->
+              <line class="teaser-crosshair" x1="173" y1="20" x2="173" y2="170" stroke="rgba(56, 189, 248, 0.5)" stroke-width="1.5" stroke-dasharray="4, 4"/>
+
+              <!-- User Probe Dot -->
+              <g class="teaser-probe-user" transform="translate(173, 153)">
+                <circle r="9" fill="rgba(244, 63, 94, 0.4)"/>
+                <circle r="4.5" fill="#f43f5e" stroke="#fff" stroke-width="1.5"/>
+                <rect x="8" y="-12" width="60" height="16" rx="4" fill="rgba(11, 15, 28, 0.9)" stroke="#f43f5e" stroke-width="1"/>
+                <text class="teaser-user-text" x="12" y="0" fill="#fda4af" font-size="9.5" font-weight="700" font-family="monospace">10.0K ops</text>
+              </g>
+
+              <!-- Opt Probe Dot -->
+              <g class="teaser-probe-opt" transform="translate(173, 152)">
+                <circle r="9" fill="rgba(16, 185, 129, 0.4)"/>
+                <circle r="4.5" fill="#10b981" stroke="#fff" stroke-width="1.5"/>
+                <rect x="8" y="4" width="60" height="16" rx="4" fill="rgba(11, 15, 28, 0.9)" stroke="#10b981" stroke-width="1"/>
+                <text class="teaser-opt-text" x="12" y="16" fill="#6ee7b7" font-size="9.5" font-weight="700" font-family="monospace">100 ops</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Seamless Workflow</span>
+        <h2 class="section-title">How AI Code Review Buddy Works</h2>
+        <p class="section-desc">From raw source code to verified optimal programs in 4 straightforward steps.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h4 class="step-title">Write or Upload Code</h4>
+          <p class="step-desc">Paste, upload (.c, .cpp, .py, .java, .js), or pick from curated algorithm presets.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h4 class="step-title">Instant Analysis</h4>
+          <p class="step-desc">Our high-speed static engine evaluates syntax, safety, and Big-O complexity in under 15ms.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h4 class="step-title">Interactive Visual Diagnosis</h4>
+          <p class="step-desc">Inspect asymptotic curves, explore control flow graphs, and study mental models in the CS tutor.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h4 class="step-title">1-Click Direct Patch</h4>
+          <p class="step-desc">Apply in-place line repairs or replace the entire file with a complete standalone optimized program.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supported Languages Section -->
+  <section id="languages" class="section" style="background: rgba(10, 16, 32, 0.4); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Multi-Language Ecosystem</span>
+        <h2 class="section-title">Built for Modern Systems & Algorithms</h2>
+        <p class="section-desc">Deep structural static analyzers tailored for both systems programming and high-level application languages.</p>
+      </div>
+
+      <div class="lang-chips-grid">
+        <div class="lang-chip"><span>⚡</span> <span>C (GCC / Clang)</span></div>
+        <div class="lang-chip"><span>🚀</span> <span>C++ (Modern C++20)</span></div>
+        <div class="lang-chip"><span>🐍</span> <span>Python 3.x</span></div>
+        <div class="lang-chip"><span>☕</span> <span>Java (JDK 21)</span></div>
+        <div class="lang-chip"><span>🟨</span> <span>JavaScript / Node</span></div>
+        <div class="lang-chip"><span>🦀</span> <span>Rust (Coming Soon)</span></div>
+        <div class="lang-chip"><span>🐹</span> <span>Go (Coming Soon)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dual-Engine Architecture Section -->
+  <section id="architecture" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Hybrid Engine Architecture</span>
+        <h2 class="section-title">Zero-Latency Heuristics + Gemini AI Power</h2>
+        <p class="section-desc">Run 100% locally with instant AST checks, or connect Gemini AI for deep semantic reasoning.</p>
+      </div>
+
+      <div class="features-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="feature-card">
+          <div class="feature-icon-box" style="border-color: rgba(245, 158, 11, 0.4);">⚡</div>
+          <h3 class="feature-title">Instant Static Engine (Offline)</h3>
+          <p class="feature-text">
+            Works 100% in the browser or on local servers with zero external API calls. Performs AST parsing, memory safety checks, Big-O estimates, and test case generation in under 15ms.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box" style="border-color: rgba(56, 189, 248, 0.4);">🤖</div>
+          <h3 class="feature-title">Gemini AI Neural Engine (Cloud)</h3>
+          <p class="feature-text">
+            Optionally configure your Gemini API key to unlock deep contextual code reviews, complex architectural insights, refactoring advice, and personalized tutoring feedback.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call To Action Banner -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner">
+        <h2 class="cta-banner-title">Ready to Review & Optimize Your Code?</h2>
+        <p class="cta-banner-subtext">
+          Open the interactive IDE Studio right now in your browser. No sign-up required. Free and open source.
+        </p>
+        <a href="index.html" class="btn btn-primary btn-lg">
+          <span>🚀 Open Interactive Studio Now</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="landing-footer">
+    <div class="container footer-content">
+      <div>
+        <strong>🧠 AI Code Review Buddy</strong> — Open Source Developer Tooling
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="index.html">Studio IDE</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#complexity">Big-O Engine</a></li>
+        <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Landing JS Controller -->
+  <script src="js/landing.js"></script>
+</body>
+</html>
