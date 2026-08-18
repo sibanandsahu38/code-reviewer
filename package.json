@@ -4,6 +4,7 @@
   "description": "AI Code Review Buddy - Interactive static analyzer, complexity estimator, AI code reviewer and tutor",
   "main": "server/index.js",
   "scripts": {
+    "build": "echo 'Static assets ready in public/'",
     "start": "node server/index.js",
     "dev": "node --watch server/index.js"
   },
