@@ -68,7 +68,7 @@ ai-code-review-buddy/
 npm install
 npm start
 ```
-Open **[http://localhost:3000](http://localhost:3000)** in your browser.
+Open **[https://code-reviewer-two-nu.vercel.app](https://code-reviewer-two-nu.vercel.app/)** in your browser.
 
 ### 2. Standalone Windows (No Node Required)
 Run `server.ps1` in PowerShell or double-click `start.bat`.
